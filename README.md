@@ -1,15 +1,5 @@
+## Homepage - Screenshot
 <img src="./demo_images/homepage.png" height="600" />
-
-Basic-Website-in-Django/
-├── manage.py
-├── website/
-│   ├── settings.py
-│   └── urls.py
-├── theme/
-│   ├── package.json
-│   └── node_modules/
-├── db.sqlite3
-└── README.md
 
 # Basic-Website-in-Django
 
