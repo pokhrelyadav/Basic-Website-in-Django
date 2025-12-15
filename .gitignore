@@ -1,0 +1,54 @@
+# ===============================
+# Python / Django
+# ===============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Django
+db.sqlite3
+*.log
+local_settings.py
+
+# Media uploads (user-generated)
+media/
+
+# ===============================
+# Tailwind / Node
+# ===============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Generated Tailwind CSS
+theme/static/css/dist/
+
+# ===============================
+# Build / Cache
+# ===============================
+dist/
+build/
+.cache/
+.coverage
+htmlcov/
+
+# ===============================
+# Editor / OS
+# ===============================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
