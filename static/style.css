@@ -1,17 +1,23 @@
 /* Reset */
-/* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-} */
+}
 
 /* Body */
+html  {
+    height: 100%;
+    background-color: white;
+}
+
 body {
     background-color: #f2f4f7;
     color: #333;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 
 }
 
@@ -125,7 +131,7 @@ ul li a.active {
 
 /* Footer */
 .footer {
-    margin-top: 20px;
+    margin-top: auto;
     padding: 15px;
     text-align: center;
     background-color: #1e3a56;
