@@ -125,9 +125,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static'),
-    BASE_DIR/'demo_images'
+    os.path.join(BASE_DIR,'static')
 ]
+# If you want to include a folder at / root, to call that as static , add her BASE_DIR/'demo_images' like this.
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
