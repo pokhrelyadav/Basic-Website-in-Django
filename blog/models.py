@@ -12,3 +12,4 @@ class Product(models.Model):
     image = models.ImageField(upload_to='productImages/')
     device_type = models.CharField(max_length=2,choices=DEVICE_CHOICE)
     date_added = models.DateTimeField(default=timezone.now)
+    brochure = models.FileField(upload_to='productBrochures/')
