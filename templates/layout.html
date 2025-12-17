@@ -2,70 +2,90 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Title not found{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'style.css' %}" />
-     {% tailwind_css %}
-</head>
-<body>
-
+    {% tailwind_css %}
+  </head>
+  <body>
     <!-- Top Navbar -->
     <div class="navbar">
-        <div class="logo">{% block logoName %}Logohere | Layout{% endblock %}</div>
-        <div class="nav-links">
-            <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
-            <a href="/about/" class="{% if request.path == '/about/' %}active{% endif %}">About</a>
-            <a href="/contact/" class="{% if request.path == '/contact/' %}active{% endif %}">Contact</a>
-        </div>
+      <div class="logo">
+        {% block logoName %}Logohere | Layout{% endblock %}
+      </div>
+      <div class="nav-links">
+        <a href="/" class="{% if request.path == '/' %}active{% endif %}"
+          >Home</a
+        >
+        <a
+          href="/about/"
+          class="{% if request.path == '/about/' %}active{% endif %}"
+          >About</a
+        >
+        <a
+          href="/contact/"
+          class="{% if request.path == '/contact/' %}active{% endif %}"
+          >Contact</a
+        >
+      </div>
     </div>
 
     <!-- Main Page Layout -->
     <div class="page">
-
-        <!-- Left Side -->
-        <div class="left">
-            <h3 class="text-2xl font-bold">Menu</h3>
-            <ul>
-                <li><a href="/blog/" class="{% if request.path == '/blog/' %}active{% endif %}" >Blog</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
+      <!-- Left Side -->
+      <div class="left">
+        <div id="leftUp">
+          <h3 class="text-2xl font-bold">Menu</h3>
+          <ul>
+            <li>
+              <a
+                href="/blog/"
+                class="{% if request.path == '/blog/' %}active{% endif %}"
+                >Blog</a
+              >
+            </li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
         </div>
 
-        <!-- Center Content -->
-        <div class="center">
-            <h1 class='text-4xl font-bold'>{% block heading1 %}Welcome this is ___ page{% endblock %}</h1>
-            <p>
-                {% block headingcontent %}Write your heading description here{% endblock %}
-            </p>
-
-            <div class="section">
-                <p>
-                {% block content %}Write your content here{% endblock %}
-                </p>
-            </div>
+        <div id="leftBelow">
+            <a href="/">
+            <img src="{% static 'demo_images/django-icon.svg' %}" alt="django logo" srcset="">
+            </a>
         </div>
+      </div>
 
-        <!-- Right Side -->
-        <div class="right">
-            <h3>Info</h3>
-            <ul>
-                <li>Notifications</li>
-                <li>Messages</li>
-                <li>Updates</li>
-                <li>Help</li>
-            </ul>
+      <!-- Center Content -->
+      <div class="center">
+        <h1 class="text-4xl font-bold">
+          {% block heading1 %}Welcome this is ___ page{% endblock %}
+        </h1>
+        <p>
+          {% block headingcontent %}Write your heading description here{%endblock %}
+        </p>
+
+        <div class="section">
+          <p>{% block content %}Write your content here{% endblock %}</p>
         </div>
+      </div>
 
+      <!-- Right Side -->
+      <div class="right">
+        <h3>Info</h3>
+        <ul>
+          <li>Notifications</li>
+          <li>Messages</li>
+          <li>Updates</li>
+          <li>Help</li>
+        </ul>
+      </div>
     </div>
 
     <!-- Bottom Footer -->
-    <div class="footer">
-        © 2025 Yadav Pokhrel. All rights reserved.
-    </div>
-
-</body>
+    <div class="footer">© 2025 Yadav Pokhrel. All rights reserved.</div>
+  </body>
 </html>
