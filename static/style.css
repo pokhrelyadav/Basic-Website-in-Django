@@ -71,6 +71,7 @@ body {
 #leftBelow {
   margin-top: 20px;
   height: 175px;
+  width: 175px;
   overflow: hidden;
   border-radius: 20px;
 }
