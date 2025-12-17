@@ -13,3 +13,6 @@ class Product(models.Model):
     device_type = models.CharField(max_length=2,choices=DEVICE_CHOICE)
     date_added = models.DateTimeField(default=timezone.now)
     brochure = models.FileField(upload_to='productBrochures/')
+    
+    def __str__(self):
+        return self.name
