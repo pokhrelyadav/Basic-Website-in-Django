@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}Title not found{% endblock %}</title>
+    <title>{% block title %} Title not found{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'style.css' %}" />
     {% tailwind_css %}
   </head>
@@ -13,7 +13,7 @@
     <!-- Top Navbar -->
     <div class="navbar">
       <div class="logo">
-        {% block logoName %}Logohere | Layout{% endblock %}
+        <a href="/">{% block logoName %}Logohere | Layout{% endblock %}</a>
       </div>
       <div class="nav-links">
         <a href="/" class="{% if request.path == '/' %}active{% endif %}"
@@ -46,16 +46,26 @@
                 >Blog</a
               >
             </li>
-            <li><a href="/blog/electronics/" class="{% if request.path == '/blog/electronics/' %}active{% endif %}"">Electronics</a></li>
+            <li>
+              <a
+                href="/blog/electronics/"
+                class="{% if request.path == '/blog/electronics/' %}active{% endif %}"
+                >Electronics</a
+              >
+            </li>
             <li><a href="#">Settings</a></li>
             <li><a href="#">Logout</a></li>
           </ul>
         </div>
 
         <div id="leftBelow">
-            <a href="/">
-            <img src="{% static 'demo_images/django-icon.svg' %}" alt="django logo" srcset="">
-            </a>
+          <a href="/">
+            <img
+              src="{% static 'demo_images/django-icon.svg' %}"
+              alt="django logo"
+              srcset=""
+            />
+          </a>
         </div>
       </div>
 
@@ -65,17 +75,26 @@
           {% block heading1 %}Welcome this is ___ page{% endblock %}
         </h1>
         <p>
-          {% block headingcontent %}Write your heading description here{%endblock %}
+          {% block headingcontent %}Write your heading description
+          here{%endblock %}
         </p>
+        <div>
+          <button
+            onclick="history.back()"
+            class="bg-green-600 hover:bg-emerald-800 text-white py-2 px-4 rounded"
+          >
+            ← Back
+          </button>
+        </div>
 
-        <div class="section">        
-        {% block content %}Write your content here{% endblock %}
+        <div class="section">
+          {% block content %}Write your content here{% endblock %}
         </div>
       </div>
 
       <!-- Right Side -->
       <div class="right">
-        <h3 class='font-bold text-2xl'>Info</h3>
+        <h3 class="font-bold text-2xl">Info</h3>
         <ul>
           <li>Notifications</li>
           <li>Messages</li>
