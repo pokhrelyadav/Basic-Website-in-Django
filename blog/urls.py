@@ -4,7 +4,7 @@ from . import views
 # localhost:8000/blog
 #localhost:8000/blog/writers
 urlpatterns = [
-    path('',views.all_products,name='blog_home'),
-    path('writers/', views.writersList),
+    path('',views.get_products,name='blog_home'),
+    path('electronics/', views.get_electronics,name='electronics'),
     
 ]
