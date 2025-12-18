@@ -1,7 +1,24 @@
-{% extends "layout.html" %}
-
-{% block title %}Title: Blog{% endblock %}
+{% extends "layout.html" %} 
+{% block title %}Title: Blog{% endblock %} 
 {% block logoName %}Blog | Home{% endblock %}
-{% block heading1 %}This is blog page {% endblock %}
-{% block headingcontent %}{% endblock %}
-{% block content %}This is where i post daily blog. feel free to subscribe.{% endblock %}
+{% block heading1 %}This is Blog Page.{% endblock %} 
+{% block headingcontent %}The data are fetched from DATABASE.{% endblock %}
+
+{% block content %}
+
+<div id="product-cards">
+    {% for product in allProductList %}
+        <div class="mycard">
+            <div class='card-image-section'>
+                <img src="{{product.image.url}}" alt="" />
+            </div>
+            <div class='card-text-section' >
+                <span class='font-bold text-blue-700 italic'>{{product.name}}</span>
+                <p class='text-sm'>{{product.description}}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

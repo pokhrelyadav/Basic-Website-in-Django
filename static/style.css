@@ -1,4 +1,3 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,21 +5,20 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Body */
 html {
-  height: 100%;
-  background-color: white;
+  /* width: 100%; */
+  height: 100vh;
+  background-color: transparent;
 }
 
 body {
-  background-color: #f2f4f7;
-  color: #333;
   display: flex;
   flex-direction: column;
+  background-color: #f2f4f7;
+  color: #333;
   min-height: 100vh;
 }
 
-/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -51,33 +49,45 @@ body {
   color: #08f824;
 }
 
-/* Page Layout */
 .page {
   display: grid;
-  grid-template-columns: 220px 1fr 220px;
+  grid-template-columns: 1fr 4fr 1fr;
   gap: 20px;
   padding: 20px;
-  flex: 1;
+  min-height: 100vh;
 }
 
-/* Left & Right */
 .left,
 .right {
   background: #fff;
   padding: 20px;
   border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 200px;
+  height: 100%;
+}
+
+.center {
+  min-width: 600px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 6px;
+  min-height: 100vh;
+}
+#leftUp {
+  justify-content: center;
 }
 
 #leftBelow {
   margin-top: 20px;
-  height: 175px;
-  width: 175px;
   overflow: hidden;
   border-radius: 20px;
+  width: 100px;
 }
 #leftBelow img {
   transition: 0.3s;
-  height: 100%;
 }
 
 #leftBelow img:hover {
@@ -89,7 +99,6 @@ body {
   margin-bottom: 12px;
 }
 
-/* Lists */
 ul {
   list-style: none;
 }
@@ -98,7 +107,6 @@ ul li {
   margin-bottom: 10px;
 }
 
-/* To make items look like menu items */
 .left ul {
   margin-top: -6px;
   margin-left: 10px;
@@ -117,14 +125,6 @@ ul li a.active {
   border-bottom: 2px solid #dfb50d;
 }
 
-/* Center Content */
-.center {
-  background: #fff;
-  padding: 30px;
-  border-radius: 6px;
-  height: 100%;
-}
-
 .center h1 {
   margin-bottom: 10px;
 }
@@ -134,17 +134,94 @@ ul li a.active {
   line-height: 1.6;
 }
 
-/* Inner section */
 .section {
   padding-top: 10px;
   border-top: 1px solid #eee;
 }
 
-/* Footer */
 .footer {
   margin-top: auto;
   padding: 15px;
   text-align: center;
   background-color: #1e3a56;
   color: #ccc;
+}
+
+#product-cards {
+  /* border: 5px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  /* justify-content: space-evenly; */
+  padding: 5px;
+}
+
+.mycard {
+  /* border: 1px solid rgb(44, 212, 1); */
+  background-color: #f9f8f8;
+  flex: 0 0 250px;
+  margin: 5px;
+  height: 300px;
+  padding: px;
+}
+
+.card-image-section {
+  /* border: 2px solid red; */
+  margin: 5px;
+  /* padding: 5px; */
+  height: 65%;
+  width: 90%;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+}
+
+.card-image-section img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  transition: 0.2s;
+}
+.card-text-section {
+  height: 30%;
+  /* border: 2px solid blue; */
+  margin-top: 15px;
+}
+
+.mycard img:hover {
+  transform: scale(1.1);
+}
+
+.mycard p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* Can show description on hover  */
+/* 
+.mycard:hover p {
+  -webkit-line-clamp: unset;
+  line-clamp: 0;
+} */
+
+@media (max-width: 980px) {
+  .right {
+    display: none;
+  }
+  .page {
+    grid-template-columns: 1fr 11fr;
+    justify-items: center;
+    padding: 10px;
+  }
+  .center {
+    width: 100%;
+  }
+
+  #product-cards {
+    justify-content: space-around;
+  }
 }
