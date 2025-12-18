@@ -1,7 +1,7 @@
 {% extends "layout.html" %} 
 
 {% block title %}Electronics Product{% endblock %} 
-{% block logoName %}Electronics{% endblock %}
+{% block logoName %}Blog | Electronics{% endblock %}
 {% block heading1 %}This is Electronics Page.{% endblock %} 
 {% block headingcontent %}The data are fetched from DATABASE.{% endblock %}
 
@@ -11,12 +11,13 @@
     {% for product in allElectronicsList %}
 
     <div class="electronic-item m-2 p-3">
+        <a href="{% url 'blog_productdetail' product.id %}">
         <img   src="{{product.image.url}}" alt="" srcset="">
         <h3 class='text-2xl font-bold text-purple-800 '>{{product.name}}</h3>
-        <a href="#">
+        
             <button
              type='button'
-             class ='w-[100%] bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded'
+             class ='w-full bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded'
             >
                 {{product.device_type}} -  {{product.id}}
             </button>

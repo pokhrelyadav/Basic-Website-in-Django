@@ -9,6 +9,7 @@
 <div id="product-cards">
     {% for product in allProductList %}
         <div class="mycard">
+            <a href="{% url 'blog_productdetail' product.id %}">
             <div class='card-image-section'>
                 <img src="{{product.image.url}}" alt="" />
             </div>
@@ -16,7 +17,9 @@
                 <span class='font-bold text-blue-700 italic'>{{product.name}}</span>
                 <p class='text-sm'>{{product.description}}</p>
             </div>
+            </a>
         </div>
+    
     {% endfor %}
 </div>
 
