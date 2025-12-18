@@ -1,7 +1,9 @@
 ## Homepage - Screenshot
 
 <img src="/static/demo_images/homepage.png" height="600" />
+
 ## Product Page -Screenshot
+
 <img src="/static/demo_images/productPage.png" height="600"/>
 
 # Basic-Website-in-Django
