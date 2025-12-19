@@ -28,6 +28,9 @@ urlpatterns = [
     path('contact/', views.contact),
     path('blog/',include('blog.urls')), #if someone hit blog app, transfer urls control from main urls.py to that app's urls.py
     
+    #API
+    path('api/v1/', include('blog.api_urls')),
+    
     path('__reload__/',include('django_browser_reload.urls'))
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
